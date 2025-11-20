@@ -89,7 +89,7 @@ li{
     padding: 0.7rem;
     margin-top: 5px;
 }
-#right-nav > p:first-child{
+.cartOrange{
     background-color: var(--Orange);
     color: white;
     position: absolute;
@@ -100,7 +100,7 @@ li{
     border-radius: 10px;
 }
 /* cart Items */
-#cartItems{
+.cartItems{
     display: none;
     position: absolute;
     top: 110%;
@@ -114,25 +114,25 @@ li{
 
     font-weight: 800;
 }
-#cartItems img{
+.cartItems img{
     width: 45px;
     border-radius: 5px;
 }
-#cartItems > p:first-child{
+.cartItems > p:first-child{
     margin: 1rem 1rem 1.25rem;
 }
-#cartItems > div{
+.cartItems > div{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin: 0.5rem 0;
 
 }
-#cartItems > div div{
+.cartItems > div div{
     font-weight: 600;
     color: var(--Darkgrayishblue);
 }
-#cartItems div button{
+.cartItems div button{
     background-image: url('./images/icon-delete.svg');
     background-repeat: no-repeat;
     background-color: transparent;
@@ -140,7 +140,7 @@ li{
     padding: 0.5rem;
     margin-left: 0.5rem;
 }
-#cartItems > button:last-of-type{
+.cartItems > button:last-of-type{
     margin: 1rem 1rem 1.5rem;
     width: 90%;
     padding: 1rem 0.5rem;
