@@ -63,17 +63,39 @@ minus.addEventListener('click',()=>{
 
 const addCartBtn = document.getElementById('addcart');
 const cartValue = cartButton.nextElementSibling;
-const cartItems = cartValue.nextElementSibling;
+const cartItems = document.getElementById('items');
+const cartEmpty = document.getElementById('empty');
+const checkoutbtn = document.getElementById('checkout');
+const amount = document.getElementById('amount');
 
+cartEmpty.style.display = 'block';
+cartItems.style.display = 'none';
+checkoutbtn.style.display = 'none';
 addCartBtn.addEventListener('click',(e)=>{
     e.preventDefault();
-    
-    if(quantity.textContent === 0 || cartValue.textContent === ""){
+    if(initialValue === 0){
         cartValue.textContent = '';
-        cartItems.style.display = 'none';
-
-    }else {
+    }else {  
+        console.log('fun');
         cartValue.textContent = quantity.textContent;
         cartValue.classList.add('cartOrange');
+        cartEmpty.style.display = 'none';
+        cartItems.style.display = 'flex';
+        checkoutbtn.style.display = 'block';
+        amount.innerHTML = `$125 x ${initialValue}<strong> $${initialValue*125}</strong>`
     }
 })
+
+// delete
+const deletebtn = document.getElementById('delete');
+
+deletebtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    cartValue.textContent = '';
+    cartEmpty.style.display = 'block';
+    cartItems.style.display = 'none';
+    checkoutbtn.style.display = 'none';
+    initialValue = 0;
+    quantity.textContent = 0;
+})
+

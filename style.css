@@ -100,6 +100,11 @@ li{
     border-radius: 10px;
 }
 /* cart Items */
+#empty{
+    text-align: center;
+    color: var(--Darkgrayishblue);
+    padding: 4rem ;
+}
 .cartItems{
     display: none;
     position: absolute;
