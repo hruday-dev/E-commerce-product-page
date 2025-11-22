@@ -29,7 +29,7 @@
       </ul>
     </div>
     <div id="right-nav">
-      <button id="cartBtn" aria-labelledby="cart"></button>
+      <button id="cartBtn" aria-label="cart open"></button>
       <p></p>
       <div class="cartItems">
         <p>Cart</p>
@@ -57,8 +57,8 @@
             <!-- <img src="./images/image-product-1.jpg" alt="image-product-1"> -->
           </div>
           <div class="arrows">
-            <img src="./images/icon-previous.svg" alt="icon-previous" class="previous">
-            <img src="./images/icon-next.svg" alt="icon-next" class="next">
+            <img src="./images/icon-previous.svg" alt="icon-previous" class="previous" aria-labelledby="previous">
+            <img src="./images/icon-next.svg" alt="icon-next" class="next" aria-labelledby="next">
           </div>
           <div class="four-img">
             <div data-val="1"><img src="./images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail"></div>
@@ -69,8 +69,8 @@
         </div>
         <div id="details">
           <p><small>SNEAKER COMPANY</small></p>
-          <h2>Fall Limited Edition Sneakers</h2>
-          <p>
+          <h1 role="heading" aria-describedby="description">Fall Limited Edition Sneakers</h1>
+          <p id="description">
             These low-profile sneakers are your perfect casual wear companion. Featuring a
             durable rubber outer sole, they’ll withstand everything the weather can offer.
           </p>
@@ -82,10 +82,10 @@
           <div id="cart">
             <div id="quantity">
               <img src="./images/icon-minus.svg" alt="icon-minus" id="minus">
-              <p>0</p>
+              <p aria-label="status">0</p>
               <img src="./images/icon-plus.svg" alt="icon-plus" id="plus">
             </div>
-              <button id="addcart"><img src="./images/icon-cart.svg" alt="icon-cart"><span>Add to cart</span></button>
+              <button id="addcart" aria-label="add to cart"><img src="./images/icon-cart.svg" alt="icon-cart"><span>Add to cart</span></button>
           </div>
         </div>
       </section>
