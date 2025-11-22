@@ -1,23 +1,29 @@
-const previous = document.getElementById('previous');
-const next = document.getElementById('next');
+const previous = document.querySelectorAll('.previous');
+const next = document.querySelectorAll('.next');
 const mainimg = document.getElementById('main-img');
-
+const lightimg = document.getElementById('lightimg');
 // dynamic image changing
 let imgLength = 4
 let counter = 1
-next.addEventListener('click',(e)=>{
-    e.preventDefault();
-    counter += 1;
-    if(counter == 5) counter =1;
-    mainimg.style.backgroundImage= `url('./images/image-product-${counter}.jpg')`;
-
+next.forEach((nxt)=>{
+    nxt.addEventListener('click',(e)=>{
+        e.preventDefault();
+        counter += 1;
+        if(counter == 5) counter =1;
+        mainimg.style.backgroundImage= `url('./images/image-product-${counter}.jpg')`;
+        lightimg.style.backgroundImage= `url('./images/image-product-${counter}.jpg')`;
+        
+    })
 })
-previous.addEventListener('click',(e)=>{
-    e.preventDefault();
-    counter -= 1;
-    if(counter == 0) counter =4;
-    mainimg.style.backgroundImage= `url('./images/image-product-${counter}.jpg')`;
-
+previous.forEach((pre)=>{
+    pre.addEventListener('click',(e)=>{
+        e.preventDefault();
+        counter -= 1;
+        if(counter == 0) counter =4;
+        mainimg.style.backgroundImage= `url('./images/image-product-${counter}.jpg')`;
+        lightimg.style.backgroundImage= `url('./images/image-product-${counter}.jpg')`;
+    
+    })
 })
 
 // mobile layout slide nav
@@ -76,7 +82,6 @@ addCartBtn.addEventListener('click',(e)=>{
     if(initialValue === 0){
         cartValue.textContent = '';
     }else {  
-        console.log('fun');
         cartValue.textContent = quantity.textContent;
         cartValue.classList.add('cartOrange');
         cartEmpty.style.display = 'none';
@@ -99,3 +104,42 @@ deletebtn.addEventListener('click',(e)=>{
     quantity.textContent = 0;
 })
 
+// four images
+
+const fourdivbtn = document.querySelectorAll('.four-img div');
+const fourImgbtn = document.querySelectorAll('.four-img img');
+const lightboximg = document.querySelector("#lightbox #main-img")
+
+fourdivbtn[0].classList.add('clicked');
+fourImgbtn[0].classList.add('active');
+fourdivbtn.forEach((btn)=>{
+    btn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        fourdivbtn.forEach((rm)=>rm.classList.remove('clicked'));
+        fourImgbtn.forEach((rm)=>rm.classList.remove('active'));
+        btn.classList.add('clicked');
+        fourImgbtn[btn.dataset.val-1].classList.add('active');
+        mainimg.style.backgroundImage = `url('./images/image-product-${btn.dataset.val}.jpg')`
+        lightboximg.style.backgroundImage = `url('./images/image-product-${btn.dataset.val}.jpg')`
+    })
+})
+
+// lightbox
+const media = window.matchMedia("(min-width: 770px)");
+const lightbox = document.getElementById('lightbox');
+const lightboxclose =document.getElementById('lightbox-close');
+
+mainimg.addEventListener('click',(e)=>{
+    e.preventDefault();
+    document.body.style.overflow = 'clip';
+    window.scrollTo(0, 0);
+    if(media.matches){
+        lightbox.style.display = 'flex';
+    }
+})
+
+lightboxclose.addEventListener('click',(e)=>{
+    e.preventDefault();
+    document.body.style.overflow = '';
+    lightbox.style.display = 'none';
+})
