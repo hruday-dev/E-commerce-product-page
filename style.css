@@ -353,8 +353,8 @@ span{
     section{
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
-        gap: 2rem;
+        justify-content: space-around;
+        gap: 6rem;
         padding: 5rem 2rem;
     } 
     #product-img{
@@ -364,7 +364,17 @@ span{
         border-radius: 25px;
     }
     #details{
-        max-width: 40%;
+        max-width: 45%;
+        gap: 1.5rem;
+    }
+    h2{
+        font-size: 2.25rem;
+    }
+    #details p{
+        font-size: 1.15rem;
+    }
+    small{
+        letter-spacing: 2px;
     }
     .four-img{
         display: flex;
@@ -435,5 +445,14 @@ span{
     }
     .lightbox-arrows img{
         width: 10px;
+    }
+    #cart{
+        display: flex;
+        box-sizing: border-box;
+    }
+    #quantity{
+        width: 60%;
+        padding: 1rem;
+        margin: 1rem 0.5rem;
     }
 }
